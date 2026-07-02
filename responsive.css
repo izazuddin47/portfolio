@@ -1,0 +1,150 @@
+/* ═══════════════════════════════════════════════
+   IZAZ UDDIN — PORTFOLIO  |  responsive.css
+═══════════════════════════════════════════════ */
+
+/* ─── TABLET (≤ 1024px) ──────────────────────── */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-visual {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-card.featured {
+    grid-column: 1 / -1;
+    grid-template-columns: 200px 1fr;
+  }
+
+  .edu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text { max-width: 100%; }
+  .hero-cta { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .hero-eyebrow { justify-content: center; }
+}
+
+/* ─── LARGE MOBILE (≤ 768px) ─────────────────── */
+@media (max-width: 768px) {
+  :root { --nav-h: 64px; }
+
+  /* Navbar */
+  .nav-links {
+    position: fixed;
+    top: var(--nav-h); left: 0; right: 0;
+    background: rgba(7, 7, 15, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                padding 0.3s;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links.open {
+    max-height: 500px;
+    padding: 1.5rem 0;
+  }
+  .nav-links li { width: 100%; text-align: center; }
+  .nav-links a {
+    display: block;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+  }
+  .nav-links a::after { display: none; }
+
+  .hamburger { display: flex; }
+
+  /* Hero */
+  section { padding: 5rem 0; }
+
+  .avatar-placeholder { width: 220px; height: 220px; }
+  .hero-stats { gap: 1rem; }
+
+  /* Skills */
+  .skills-grid { grid-template-columns: 1fr; }
+
+  /* Projects */
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card.featured {
+    grid-column: unset;
+    grid-template-columns: 1fr;
+  }
+  .featured .project-img { min-height: 140px; }
+
+  /* Education */
+  .edu-grid { grid-template-columns: 1fr; }
+  .edu-card { flex-direction: column; }
+
+  /* Certs */
+  .cert-grid { grid-template-columns: 1fr; }
+
+  /* Timeline */
+  .timeline::before { left: 10px; }
+  .timeline-item { padding-left: 40px; }
+  .timeline-dot { left: 2px; }
+  .tl-header { flex-direction: column; }
+
+  /* Contact */
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ─── SMALL MOBILE (≤ 480px) ─────────────────── */
+@media (max-width: 480px) {
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.8rem; }
+
+  .hero-cta { flex-direction: column; }
+  .hero-cta .btn { width: 100%; justify-content: center; }
+
+  .about-card { padding: 1.25rem; }
+  .about-info-list .info-row { font-size: 0.82rem; }
+
+  .project-body { padding: 1.1rem; }
+  .project-links { flex-direction: column; }
+  .project-links .btn { width: 100%; justify-content: center; }
+
+  .contact-form { padding: 1.25rem; }
+  .contact-social .social-btn { width: 40px; height: 40px; font-size: 1rem; }
+}
+
+/* ─── REDUCED MOTION ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  #loader .loader-fill { width: 100%; }
+}
